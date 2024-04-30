@@ -17,19 +17,19 @@ Script to annotate genomes with braker3
    
 3. build braker3
 
-        singularity build braker3.sif docker://teambraker/braker3:latest
+                singularity build braker3.sif docker://teambraker/braker3:latest
    
-4.   adss
+4.   export the container image
 
-        export BRAKER_SIF=/data/users/imateusgonzalez/Z_Soft/braker3.sif
+                export BRAKER_SIF=/data/users/imateusgonzalez/Z_Soft/braker3.sif
      
 6.   Run to see the help menu
    
-        singularity exec ${BRAKER_SIF} braker.pl
+                singularity exec ${BRAKER_SIF} braker.pl
 
 7. copy the Augustus config directory locally to make it writable
 
-       singularity exec --no-home -B $PWD:$PWD braker3.sif cp -R /opt/Augustus/config $PWD
+               singularity exec --no-home -B $PWD:$PWD braker3.sif cp -R /opt/Augustus/config $PWD
    
 8.   remove output directory (eg. test1) if it already exists
 
