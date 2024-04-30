@@ -33,8 +33,8 @@ Script to annotate genomes with braker3
    
 8.   remove output directory (eg. test1) if it already exists
 
-      wd=hap1_braker
-      if [ -d $wd ]; then rm -r $wd ;fi
+              wd=hap1_braker
+              if [ -d $wd ]; then rm -r $wd ;fi
 
 
 9.  Copy all files to annotation in folder: softmasked assembly, aligned sorted bam, and protein from other species.
