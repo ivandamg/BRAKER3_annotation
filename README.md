@@ -47,8 +47,9 @@ Script to annotate genomes with braker3
     
               sbatch --partition=pibu_el8 --job-name=hap1BRAKER3 --time=1-24:00:00 --mem-per-cpu=64G --ntasks=48 --cpus-per-task=1 --output=hap1BRAKER3.out --error=hap1BRAKER3.error --mail-type=END,FAIL --wrap "cd /data/users/imateusgonzalez/Z_Soft/; singularity exec --no-home -B ${PWD}:${PWD} ${BRAKER_SIF} braker.pl --AUGUSTUS_CONFIG_PATH=${PWD}/config/ --species=Argania --gff3 --genome=01_Hap1/hap1.fasta.masked --bam=01_Hap1/ALLSamples_Hap1_sorted.bam --prot_seq=01_Hap1/miracle_pep.fasta --workingdir=hap1_braker_v2 --GENEMARK_PATH=${ETP}/gmes --threads 48 --busco_lineage embryophyta_odb10 &> hap1.log"
 
+with protein evidence including EMbryophytaReviewedSwissprot_Medicago_2Sapotaceae_3ericales
 
-
+                sbatch --partition=pibu_el8 --job-name=hap1BRAKER3_v3 --time=1-24:00:00 --mem-per-cpu=64G --ntasks=48 --cpus-per-task=1 --output=hap1BRAKER3_v3.out --error=hap1BRAKER3_v3.error --mail-type=END,FAIL --wrap "cd /data/users/imateusgonzalez/Z_Soft/; singularity exec --no-home -B ${PWD}:${PWD} ${BRAKER_SIF} braker.pl --AUGUSTUS_CONFIG_PATH=${PWD}/config/ --species=Argania --gff3 --genome=01_Hap1/hap1.fasta.masked --bam=01_Hap1/ALLSamples_Hap1_sorted.bam --prot_seq=01_Hap1/2_EmbryophytaSwissProt_Medicago_3ericales_2sapotaceae_proteins.fasta --useexisting --workingdir=hap1_braker_v3 --GENEMARK_PATH=${ETP}/gmes --threads 48 --busco_lineage embryophyta_odb10 &> hap1.log"
 
 
 
