@@ -41,7 +41,7 @@ Script to annotate genomes with braker3
   
 10.  run braker3 in cluster in /data/users/imateusgonzalez/Z_Soft/
     
-              sbatch --partition=pibu_el8 --job-name=hap1BRAKER3 --time=12-24:00:00 --mem-per-cpu=50G --ntasks=36 --cpus-per-task=1 --output=hap1BRAKER3.out --error=hap1BRAKER3.error --mail-type=END,FAIL --wrap "cd /data/users/imateusgonzalez/Z_Soft/; singularity exec --no-home -B ${PWD}:${PWD} ${BRAKER_SIF} braker.pl --AUGUSTUS_CONFIG_PATH=${PWD}/config/ --species=Argan --genome=01_Hap1/hap1.fasta.masked --bam=01_Hap1/ALLSamples_Hap1_sorted.bam --prot_seq=01_Hap1/Medicago_3ericales_2sapotaceae_proteins.fasta --workingdir=hap1_braker --GENEMARK_PATH=${ETP}/gmes --threads 36 --busco_lineage embryophyta_odb10 &> hap1.log"
+              sbatch --partition=pibu_el8 --job-name=hap1BRAKER3 --time=12-24:00:00 --mem-per-cpu=50G --ntasks=48 --cpus-per-task=1 --output=hap1BRAKER3.out --error=hap1BRAKER3.error --mail-type=END,FAIL --wrap "cd /data/users/imateusgonzalez/Z_Soft/; singularity exec --no-home -B ${PWD}:${PWD} ${BRAKER_SIF} braker.pl --AUGUSTUS_CONFIG_PATH=${PWD}/config/ --species=Argania --softmasking --gff3 --useexisting --genome=01_Hap1/hap1.fasta.masked --bam=01_Hap1/ALLSamples_Hap1_sorted.bam --prot_seq=01_Hap1/Medicago_3ericales_2sapotaceae_proteins.fasta --workingdir=hap1_braker --GENEMARK_PATH=${ETP}/gmes --threads 48 --busco_lineage embryophyta_odb10 &> hap1.log"
 
 11.  run in interactive with export steps 2 and 4 braker3 only with vitellaria proteins and all RNASeq in cluster in /data/users/imateusgonzalez/Z_Soft/
     
