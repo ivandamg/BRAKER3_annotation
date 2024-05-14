@@ -57,7 +57,9 @@ with protein evidence including EMbryophytaReviewedSwissprot_Medicago_2Sapotacea
 
 
 
+13. VF: 221 Embryophyta proteom_ 12 + 30 RNASEQ
 
+                     sbatch --partition=pibu_el8 --job-name=hap2BRAKER3_v8 --time=1-24:00:00 --mem-per-cpu=64G --ntasks=48 --cpus-per-task=1 --output=hap2BRAKER3_v9.out --error=hap2BRAKER3_v9.error --mail-type=END,FAIL --wrap "cd /data/users/imateusgonzalez/Z_Soft/; singularity exec --no-home -B ${PWD}:${PWD} ${BRAKER_SIF} braker.pl --AUGUSTUS_CONFIG_PATH=${PWD}/config/ --species=Argania --gff3 --genome=/data/projects/p782_RNA_seq_Argania_spinosa/30_FinalAssemblyPaper/04_RNAseqMapping/02_hap2/Aspinosa_hap2.fa.masked --bam=/data/projects/p782_RNA_seq_Argania_spinosa/30_FinalAssemblyPaper/04_RNAseqMapping/02_hap2/Ufribourg_12samples_Hap2_sorted.bam,/data/projects/p782_RNA_seq_Argania_spinosa/30_FinalAssemblyPaper/04_RNAseqMapping/02_hap2/PRJNA863910_30samples_Hap2_sorted.bam --prot_seq=/data/projects/p782_RNA_seq_Argania_spinosa/30_FinalAssemblyPaper/05_BRAKER3/Ref_proteomes/221_Embryophyta_proteomes.fasta.gz --useexisting --workingdir=hap2_braker_v9 --GENEMARK_PATH=${ETP}/gmes --threads 48 --busco_lineage embryophyta_odb10 &> hap2_v9.log"
 
 
 
